@@ -1,0 +1,22 @@
+{
+  "name": "boxify",
+  "version": "0.0.0",
+  "description": "boxify ======",
+  "main": "index.js",
+  "scripts": {
+    "test": "say -v 'Good news' 'Success!'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Ryn830/boxify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ryn830/boxify/issues"
+  },
+  "homepage": "https://github.com/Ryn830/boxify",
+  "dependencies": {
+    "jasmine": "^2.0.1"
+  }
+}
