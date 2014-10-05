@@ -10,3 +10,8 @@ Container.prototype.getWidth = function(){
 Container.prototype.getHeight = function(){
   return this.height;
 }
+
+var Box = function(width, height){
+  this.width = width;
+  this.height = height;
+}
