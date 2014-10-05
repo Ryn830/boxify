@@ -17,3 +17,6 @@ Container.prototype.getHeight = function(){
   return this.height;
 }
 
+Container.prototype.getArea = function(){
+
+}
