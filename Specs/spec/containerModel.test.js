@@ -12,5 +12,9 @@ describe('the container', function(){
   it('should contain a width method', function(){
     expect(typeof container.getWidth).toBe("function");
   });
+
+  it('should contain an area method', function(){
+    expect(typeof container.getArea).toBe("function");
+  });
 });
 
