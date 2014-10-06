@@ -33,8 +33,8 @@ Container.prototype.isOccupied = function(widthCoordinate, heightCoordinate){
   return !!this.grid[heightCoordinate][widthCoordinate];
 }
 
-Container.prototype.fillCoordinate = function(){
-
+Container.prototype.fillCoordinate = function(widthCoordinate, heightCoordinate){
+  this.grid[heightCoordinate][widthCoordinate] = true;
 }
 
 function makeGrid(width, height){
