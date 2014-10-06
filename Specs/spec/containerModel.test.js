@@ -36,3 +36,15 @@ describe('container dimension methods', function(){
     expect(container.getArea()).toEqual(24);
   });
 });
+
+describe("the container's boxes", function(){
+  var container;
+  beforeEach(function(){
+    container = new Container(4, 6);
+  });
+
+  it('should know when a space is unoccupied', function(){
+    expect(container.isOccupied(1,1)).toEqual(false);
+    expect(container.isOccupied(4,6)).toEqual(false);
+  });
+});
