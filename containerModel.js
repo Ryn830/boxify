@@ -35,7 +35,7 @@ Container.prototype.removeBox = function(){
 }
 
 Container.prototype.isOccupied = function(widthCoordinate, heightCoordinate){
-  return !!this.grid[heightCoordinate][widthCoordinate];
+  return this.grid[heightCoordinate][widthCoordinate] || false;
 }
 
 Container.prototype.fillCoordinate = function(widthCoordinate, heightCoordinate, value){
