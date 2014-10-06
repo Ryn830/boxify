@@ -14,3 +14,15 @@ Container.prototype.getHeight = function(){
 Container.prototype.getArea = function(){
   return this.getWidth() * this.getHeight();
 }
+
+Container.prototype.getBoxCount = function(){
+}
+
+Container.prototype.addBox = function(){
+}
+
+Container.prototype.isOccupied = function(){
+}
+
+Container.prototype.fillCoordinate = function(){
+}
