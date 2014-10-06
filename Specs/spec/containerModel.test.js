@@ -65,12 +65,13 @@ describe("the container's contents", function(){
 
   it('should increment boxCount when adding a box', function(){
     container.addBox();
-    expect(container.boxCount).toEqual(1);
+    expect(container.getBoxCount()).toEqual(1);
   });
 
   it('should decrement boxCount when removing a box', function(){
+    container.addBox();
     container.removeBox();
-    expect(container.boxCount).toEqual(0);
+    expect(container.getBoxCount()).toEqual(0);
   });
 
   it('should return false when a space is not filled', function(){
