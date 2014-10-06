@@ -1,6 +1,7 @@
 var Container = function(width, height){
   this.width = width;
   this.height = height;
+  this.boxCount = 0;
 }
 
 Container.prototype.getWidth = function(){
@@ -16,9 +17,11 @@ Container.prototype.getArea = function(){
 }
 
 Container.prototype.getBoxCount = function(){
+  return this.boxCount;
 }
 
 Container.prototype.addBox = function(){
+  this.boxCount += 1;
 }
 
 Container.prototype.isOccupied = function(){
