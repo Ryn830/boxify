@@ -29,10 +29,12 @@ Container.prototype.removeBox = function(){
   if(this.boxCount) this.boxCount -= 1;
 }
 
-Container.prototype.isOccupied = function(){
+Container.prototype.isOccupied = function(widthCoordinate, heightCoordinate){
+  return !!this.grid[heightCoordinate][widthCoordinate];
 }
 
 Container.prototype.fillCoordinate = function(){
+
 }
 
 function makeGrid(width, height){
