@@ -53,14 +53,32 @@ describe('container dimension methods', function(){
   });
 });
 
-describe("the container's boxes", function(){
+describe("the container's contents", function(){
   var container;
   beforeEach(function(){
     container = new Container(4, 6);
   });
 
-  it('should know when a space is unoccupied', function(){
-    expect(container.isOccupied(1,1)).toEqual(false);
-    expect(container.isOccupied(4,6)).toEqual(false);
+  it('should increment boxCount when adding a box', function(){
+    container.addBox();
+    expect(container.boxCount).toEqual(1);
+  });
+
+  it('should decrement boxCount when removing a box', function(){
+    container.removeBox();
+    expect(container.boxCount).toEqual(0);
+  });
+
+  it('should return false when a space is not filled', function(){
+    container.fillCoordinate(2,2);
+    expect(container.isOccupied(1,1)).toBe(false);
+    expect(container.isOccupied(4,6)).toBe(false);
+  });
+
+  it('should return a truthy value when a space is filled', function(){
+    container.fillCoordinate(2,2);
+    container.fillCoordinate(4,6);
+    expect(container.isOccupied(2,2)).toBe(true);
+    expect(container.isOccupied(4,6)).toBe(true);
   });
 });
