@@ -57,37 +57,6 @@ describe('container dimension methods', function(){
   });
 });
 
-describe("the container's contents", function(){
-  var container;
-  beforeEach(function(){
-    container = new Container(4, 6);
-  });
-
-  it('should increment boxCount when adding a box', function(){
-    container.addBox();
-    expect(container.getBoxCount()).toEqual(1);
-  });
-
-  it('should decrement boxCount when removing a box', function(){
-    container.addBox();
-    container.removeBox();
-    expect(container.getBoxCount()).toEqual(0);
-  });
-
-  it('should return false when a space is not filled', function(){
-    container.fillCoordinate(2,2);
-    expect(container.isOccupied(0,0)).toBe(false);
-    expect(container.isOccupied(3,5)).toBe(false);
-  });
-
-  it('should return a truthy value when a space is filled', function(){
-    container.fillCoordinate(2,2);
-    container.fillCoordinate(3,5);
-    expect(container.isOccupied(2,2)).toBe(true);
-    expect(container.isOccupied(3,5)).toBe(true);
-  });
-});
-
 describe('box addition and removal', function(){
   var container;
   beforeEach(function(){
@@ -111,3 +80,34 @@ describe('box addition and removal', function(){
   });
 });
 
+describe("the container's awareness of it's contents", function(){
+  var container;
+  beforeEach(function(){
+    container = new Container(4, 6);
+  });
+
+  it('should increment boxCount when adding a box', function(){
+    container.addBox();
+    expect(container.getBoxCount()).toEqual(1);
+  });
+
+  it('should decrement boxCount when removing a box', function(){
+    container.addBox();
+    container.removeBox();
+    expect(container.getBoxCount()).toEqual(0);
+  });
+
+  it('should return the box id of a filled space', function(){
+    container.addBox(0, 0, 1, 1);
+    container.addBox(0, 1, 2, 2);
+    expect(container.isOccupied(0, 0)).toEqual(1);
+    expect(container.isOccupied(0, 1)).toEqual(2);
+    expect(container.isOccupied(1, 2)).toEqual(2);
+  });
+
+  it('should return false when a space is not filled', function(){
+    container.fillCoordinate(2,2);
+    expect(container.isOccupied(0,0)).toBe(false);
+    expect(container.isOccupied(3,5)).toBe(false);
+  });
+});
