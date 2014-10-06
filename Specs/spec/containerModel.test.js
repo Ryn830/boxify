@@ -87,3 +87,27 @@ describe("the container's contents", function(){
     expect(container.isOccupied(3,5)).toBe(true);
   });
 });
+
+describe('box addition and removal', function(){
+  var container;
+  beforeEach(function(){
+    container = new Container(4,6);
+  });
+
+  it('should add a box to a given coordinate', function(){
+    container.addBox(2, 2, 1, 1);
+    expect(!!container.isOccupied(2, 2)).toBe(true);
+    expect(!!container.isOccupied(3, 2)).toBe(false);
+    expect(!!container.isOccupied(2, 3)).toBe(false);
+  });
+
+  it('should be able to add rectangular boxes', function(){
+    container.addBox(0, 0, 1, 3);
+    expect(!!container.isOccupied(0, 0)).toBe(true);
+    expect(!!container.isOccupied(0, 1)).toBe(true);
+    expect(!!container.isOccupied(0, 2)).toBe(true);
+    expect(!!container.isOccupied(0, 3)).toBe(false);
+    expect(!!container.isOccupied(1, 0)).toBe(false);
+  });
+});
+
