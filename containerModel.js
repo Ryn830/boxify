@@ -22,10 +22,10 @@ Container.prototype.getBoxCount = function(){
 }
 
 Container.prototype.addBox = function(widthCoordinate, heightCoordinate, width, height){
-  this.boxCount += 1;
-  for(var i = widthCoordinate; i < widthCoordinate + width; i++){
-    for(var j = heightCoordinate; j < heightCoordinate + height; j++){
-      this.grid[i][j] = this.getBoxCount();
+  var boxID = ++this.boxCount;
+  for(var w = widthCoordinate; w < widthCoordinate + width; w++){
+    for(var h = heightCoordinate; h < heightCoordinate + height; h++){
+      this.fillCoordinate(w, h, boxID);
     }
   }
 }
@@ -38,8 +38,8 @@ Container.prototype.isOccupied = function(widthCoordinate, heightCoordinate){
   return !!this.grid[heightCoordinate][widthCoordinate];
 }
 
-Container.prototype.fillCoordinate = function(widthCoordinate, heightCoordinate){
-  this.grid[heightCoordinate][widthCoordinate] = true;
+Container.prototype.fillCoordinate = function(widthCoordinate, heightCoordinate, value){
+  this.grid[heightCoordinate][widthCoordinate] = value || true;
 }
 
 function makeGrid(width, height){
