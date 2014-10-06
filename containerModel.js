@@ -2,6 +2,7 @@ var Container = function(width, height){
   this.width = width;
   this.height = height;
   this.boxCount = 0;
+  this.grid = makeGrid(width, height);
 }
 
 Container.prototype.getWidth = function(){
@@ -32,4 +33,12 @@ Container.prototype.isOccupied = function(){
 }
 
 Container.prototype.fillCoordinate = function(){
+}
+
+function makeGrid(width, height){
+  var grid = [];
+  for(var i = 0; i < height; i++){
+    grid[i] = new Array(width);
+  }
+  return grid;
 }
