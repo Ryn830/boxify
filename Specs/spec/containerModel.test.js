@@ -25,6 +25,10 @@ describe('the container', function(){
     expect(typeof container.addBox).toBe("function");
   });
 
+  it('should contain a removeBox method', function(){
+    expect(typeof container.removeBox).toBe("function");
+  });
+
   it('should contain an isOccupied method', function(){
     expect(typeof container.isOccupied).toBe("function");
   });
