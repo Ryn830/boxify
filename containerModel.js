@@ -21,8 +21,13 @@ Container.prototype.getBoxCount = function(){
   return this.boxCount;
 }
 
-Container.prototype.addBox = function(){
+Container.prototype.addBox = function(widthCoordinate, heightCoordinate, width, height){
   this.boxCount += 1;
+  for(var i = widthCoordinate; i < widthCoordinate + width; i++){
+    for(var j = heightCoordinate; j < heightCoordinate + height; j++){
+      this.grid[i][j] = this.getBoxCount();
+    }
+  }
 }
 
 Container.prototype.removeBox = function(){
