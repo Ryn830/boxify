@@ -5,16 +5,32 @@ describe('the container', function(){
     container = new Container(4,4);
   });
 
-  it('should contain a width method', function(){
+  it('should contain a getWidth method', function(){
     expect(typeof container.getWidth).toBe("function");
   });
 
-  it('should contain a height method', function(){
+  it('should contain a getHeight method', function(){
     expect(typeof container.getHeight).toBe("function");
   });
 
-  it('should contain an area method', function(){
+  it('should contain a getArea method', function(){
     expect(typeof container.getArea).toBe("function");
+  });
+
+  it('should contain a getBoxCount method', function(){
+    expect(typeof container.getBoxCount).toBe("function");
+  });
+
+  it('should contain a addBox method', function(){
+    expect(typeof container.addBox).toBe("function");
+  });
+
+  it('should contain an isOccupied method', function(){
+    expect(typeof container.isOccupied).toBe("function");
+  });
+
+  it('should contain a fillCoordinate method', function(){
+    expect(typeof container.fillCoordinate).toBe("function");
   });
 });
 
