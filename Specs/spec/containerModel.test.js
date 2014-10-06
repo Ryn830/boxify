@@ -76,14 +76,14 @@ describe("the container's contents", function(){
 
   it('should return false when a space is not filled', function(){
     container.fillCoordinate(2,2);
-    expect(container.isOccupied(1,1)).toBe(false);
-    expect(container.isOccupied(4,6)).toBe(false);
+    expect(container.isOccupied(0,0)).toBe(false);
+    expect(container.isOccupied(3,5)).toBe(false);
   });
 
   it('should return a truthy value when a space is filled', function(){
     container.fillCoordinate(2,2);
-    container.fillCoordinate(4,6);
+    container.fillCoordinate(3,5);
     expect(container.isOccupied(2,2)).toBe(true);
-    expect(container.isOccupied(4,6)).toBe(true);
+    expect(container.isOccupied(3,5)).toBe(true);
   });
 });
