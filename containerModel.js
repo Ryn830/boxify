@@ -24,6 +24,10 @@ Container.prototype.addBox = function(){
   this.boxCount += 1;
 }
 
+Container.prototype.removeBox = function(){
+  if(this.boxCount) this.boxCount -= 1;
+}
+
 Container.prototype.isOccupied = function(){
 }
 
